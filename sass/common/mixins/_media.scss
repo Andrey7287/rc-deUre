@@ -1,0 +1,7 @@
+@mixin mq($point) {
+	@each $breakpoint, $widths in $breakpoint-widths {
+		@if $point == $breakpoint {
+			@media (max-width: $widths) { @content; }
+		}
+	}
+}

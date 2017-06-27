@@ -1,0 +1,90 @@
+doctype html
+html
+  head
+    title= 'title'
+    meta(name="viewport", content="initial-scale=1.0, width=device-width")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700")
+    link(rel="shortcut icon", href="./favicon.ico")
+    
+  body
+    header.header
+      .header__menu
+        .container
+          nav.site-nav-outer
+            button.c-hamburger.c-hamburger--htx
+            ul.site-nav
+              li.site-nav__link
+                a(href="/") О&nbsp;компании 
+              li.site-nav__link
+                a(href="inner1") адвокаты
+              li.site-nav__drop
+                span Услуги физическим лицам 
+                .drop
+                  ul.drop-menu
+                    each li in ['Банкротство', 'Гражданские споры', 'Жилищные споры', 'Защита прав потребителей', 'Земельные споры', 'Наследственные дела', 'Семейные споры', 'Кредитные и долговые споры', 'Уголовные дела', 'Страховые споры']
+                      li.drop-menu__item
+                        a(href="#").drop-menu__link= li 
+                  a(href="#").btn.btn_w
+              li.site-nav__drop
+                span Услуги юридическим лицам 
+                .drop
+                  ul.drop-menu
+                    each li in ['Банкротство', 'Гражданские споры', 'Жилищные споры', 'Защита прав потребителей', 'Земельные споры', 'Наследственные дела', 'Семейные споры', 'Кредитные и долговые споры', 'Уголовные дела', 'Страховые споры']
+                      li.drop-menu__item
+                        a(href="#").drop-menu__link= li
+                  a(href="#").btn.btn_w
+              li.site-nav__link
+                a(href="inner2") отзывы
+              li.site-nav__link
+                a(href="inner1") контакты
+      .header__top
+        .container
+          .top-contacts
+            .logo
+              img(src="./images/logo.png", alt="logotip De-Ure")
+            .top-contacts__item
+              span Название улицы, дом 33, 51
+              a(href="mailto:info@mailexample.ru", title="info@mailexample.ru")
+            .top-contacts__item
+              span +7 (000) 000-00-00
+              a(href="#callBack", title="Обратный звонок") Обратный звонок
+      .header__slider
+        .container
+          .slider.js-slider-1
+            each val in [1,2]
+              .slider__item
+                .slider__inner.row
+                  .slider__pic.col
+                    svg(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="650" height="530")
+                      defs
+                        filter#filter
+                          feGaussianBlur(stdDeviation="25")
+                        mask#mask
+                          ellipse(cx="50%" cy="50%" rx="40%" ry="40%" fill="white" filter="url(#filter)")
+                      image(xlink:href="./images/slider"+val+".jpg" width="650" height="530" mask="url(#mask)")
+                  .slider__info.col
+                    .title Семейные споры
+                    p.
+                      Мы всегда относимся с пониманием к эмоциональным переживаниям, обусловливающим всякого рода семейные прения, и в полной мере осознаем необходимость поиска деликатных и, в конечном счете, оптимальных решений. 
+                    a(href="/moreinfo", title="подробнее").btn подробнее
+          button.slider-arrow.js-slider-1-left previos
+          button.slider-arrow.js-slider-1-right next
+          //.slider-dots.js-slider-1-dots
+    main
+      block content
+    footer.footer
+      .container
+        .footer__top.row
+          .logo
+            img(src="./images/logo.png", alt="logotip De-Ure")
+          .footer__nav.col
+            .title о компании
+              ul
+              
+
+          .footer__nav.col
+            .title услуги
+          .footer__nav.col
+            .title контактная информация
+        .footer__bottom

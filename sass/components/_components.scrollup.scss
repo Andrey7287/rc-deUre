@@ -1,0 +1,42 @@
+
+.scrollup {
+	position: fixed;
+	font-size: 0;
+	padding: 0;
+	z-index: 100;
+	right: -9999px;
+	bottom: 35px;
+	width: 36px;
+	height: 36px;
+	border: 2px solid $scroll-up-color;
+	border-radius: 50%;
+	cursor: pointer;
+	opacity: 0;
+	transition: opacity .3s ease-out;
+	&::before {
+		content: " ";
+		display: block;
+		color: $scroll-up-color;
+		width: 0;
+		height: 0;
+		border-left: 8px solid transparent;
+		border-right: 8px solid transparent;
+		border-bottom: 10px solid $scroll-up-color;
+		margin: 9px auto;
+		transition: border-bottom .3s ease-out;
+	}
+	&.act {
+		right: 20px;
+		opacity: .7;
+		background: #fff;
+		&:hover {
+			background: $scroll-up-color;
+			opacity: 1;
+		}
+	}
+	&:hover {
+		&::before {
+			border-bottom: 10px solid #fff;
+		}
+	}
+}
