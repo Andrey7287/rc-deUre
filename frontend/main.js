@@ -21,12 +21,20 @@ var	mobileView = window.matchMedia("(max-width: 768px)").matches,
 ********** Menu **********
 **************************/
 
-$('.site-nav__drop>span').hover(function(){
+$('.drop-trigger').hover(function(){
 
-	$(this).next().stop().slideToggle().toggleClass('drop_act');
+	$(this).addClass('act').next().stop().slideDown().addClass('drop_act');
 
+}, function(e){
+	if( !$(e.relatedTarget).is('.drop') ) {
+		$(this).removeClass('act').next().stop().slideUp().removeClass('drop_act');
+	}
 });
+$('.drop').mouseleave(function(){
 
+	$(this).stop().slideUp().removeClass('drop_act');
+	$('.drop-trigger').removeClass('act');
+});
 
 
 /************************
@@ -63,10 +71,17 @@ $(document).scroll(function(){
 			var scroll = $('body').scrollTop() ? $('body').scrollTop() : $('html').scrollTop();
 			scroll >= 300 ? $('.scrollup').addClass('act') : $('.scrollup').removeClass('act');
 			scrollTiming = 0;
-
 		},300);
 
 	}
+
+	(function switchTop(){
+
+		var $fixMenu = $('.header__menu');
+
+		$(document).scrollTop() ? $fixMenu.addClass('slim') : $fixMenu.removeClass('slim');
+
+	}($));
 
 });
 

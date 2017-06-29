@@ -4,6 +4,9 @@
 }
 /**** SLIDER ****/
 .slider{
+	&__item {
+		outline: none;
+	}
 	&__info {
 		padding-top: 90px;
 		.title {
@@ -12,6 +15,10 @@
 		}
 		p {
 			padding-right: 70px;
+			line-height: 1.75em;
+		}
+		.btn {
+			margin-top: 18px;
 		}
 	}
 }

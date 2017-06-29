@@ -1,5 +1,9 @@
 .site-nav-outer {
 	padding: 148px 0 17px;
+	transition: padding .1s ease-in-out;
+	.slim & {
+		padding: 17px 0;
+	}
 }
 .site-nav{
 	height: 50px;
@@ -28,6 +32,11 @@
 			@include font(18,22,700,$serif);
 			background: linear-gradient(to bottom, rgba(242,107,75,1) 0%,rgba(237,163,81,1) 100%);
 			position: relative;
+			padding: 26px 0 16px;
+			transition: padding .1s ease-in-out;
+			.slim & {
+				padding: 10px 0;
+			}
 			&::after{
 				content: " ";
 				display: block;
@@ -44,7 +53,7 @@
 				transition: height .3s ease-in;
 				height: 0;
 			}
-			&:hover {
+			&.act {
 				&::before {
 					height: 43px;
 				}
@@ -55,36 +64,44 @@
 		background: #f4f0eb;
 		position: absolute;
 		width: 650px;
-		top: 82px;
+		top: 104px;
 		padding: 20px;
 		display: none;
 		transition: top .3s ease-in;
-		&::before {
-			content: " ";
-			display: block;
-			@include sprite($drop-border_act);
-			position: absolute;
-			bottom: 100%;
-			left: 0;
+		.slim & {
+			top: 82px;
 		}
 		.btn {
-			margin: 10px auto;
+			margin: 15px auto 25px;
 			display: block;
 			width: 360px;
 			text-align: center;
 		}
 		&_act {
-			top: 126px;
+			top: 148px;
+			.slim & {
+				top: 126px;
+			}
 		}
 	}
 	&__drop {
 		position: relative;
 		top: -148px;
+		transition: all .1s ease-in-out;
+		.slim & {
+			top: -17px;
+		}
 		&_1 {
 			right: 95px;
+			.slim & {
+				right: -17px;
+			}
 		}
 		&_2 {
 			left: 95px;
+			.slim & {
+				left: 0;
+			}
 			.drop {
 				right: $gutter;
 				&::before {

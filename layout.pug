@@ -20,7 +20,7 @@ html
               li.site-nav__link.col
                 a(href="inner1") адвокаты
               li.site-nav__drop.site-nav__drop_1.col
-                span Услуги физическим лицам 
+                span.drop-trigger Услуги физическим лицам 
                 .drop
                   ul.drop-menu
                     each li in ['Банкротство', 'Гражданские споры', 'Жилищные споры', 'Защита прав потребителей', 'Земельные споры', 'Наследственные дела', 'Семейные споры', 'Кредитные и долговые споры', 'Уголовные дела', 'Страховые споры']
@@ -28,7 +28,7 @@ html
                         a(href="#").drop-menu__link= li 
                   a(href="#").btn.btn_w получить консультацию
               li.site-nav__drop.site-nav__drop_2.col
-                span Услуги юридическим лицам 
+                span.drop-trigger Услуги юридическим лицам 
                 .drop
                   ul.drop-menu
                     each li in ['Банкротство', 'Гражданские споры', 'Жилищные споры', 'Защита прав потребителей', 'Земельные споры', 'Наследственные дела', 'Семейные споры', 'Кредитные и долговые споры', 'Уголовные дела', 'Страховые споры']
@@ -43,10 +43,10 @@ html
         .header__top.row
           img(src="./images/logo.png", alt="logotip De-Ure").site-logo
           .top-contacts.col
-            div Название улицы, дом 33, 51
+            div.top-contacts__addr Название улицы, дом 33, 51
             a(href="mailto:info@mailexample.ru", title="info@mailexample.ru") info@mailexample.ru
           .top-contacts.col
-            div +7 (000) 000-00-00
+            div.top-contacts__phone +7 (000) 000-00-00
             a(href="#callBack", title="Обратный звонок") Обратный звонок
       .container
         .header__slider

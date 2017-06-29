@@ -5,23 +5,35 @@
     position: fixed;
     width: 100%;
     z-index: 10;
+    &.slim {
+      background: linear-gradient(to bottom, #304351 0%, #3e4f5b 100%);
+      z-index: 12;
+    }
   }
   &__top {
     position: relative;
     .site-logo {
       position: absolute;
-      top: 0;
+      top: 34px;
       right: calc(50% - 85px);
     }
     .top-contacts {
-      padding-top: 28px;
+      padding-top: 46px;
       padding-bottom: 60px;
       flex-basis: auto;
       flex-grow: 0;
       position: relative;
       z-index: 11;
+      @include font(20,25,300);
       a {
+        display: inline-block;
         color: #ffc687;
+      }
+      &__phone {
+        @include font(24,27,300,$open,20);
+      }
+      &__addr {
+        margin-bottom: 12px;
       }
       &:last-child{
         text-align: right;
