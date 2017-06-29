@@ -17,6 +17,18 @@ var	mobileView = window.matchMedia("(max-width: 768px)").matches,
 		resizeAlign = new OnResize,
 		scrollTiming = 0;
 
+/*************************
+********** Menu **********
+**************************/
+
+$('.site-nav__drop>span').hover(function(){
+
+	$(this).next().stop().slideToggle().toggleClass('drop_act');
+
+});
+
+
+
 /************************
 ****** Mobile menu ******
 *************************/

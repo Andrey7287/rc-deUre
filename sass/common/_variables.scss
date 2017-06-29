@@ -18,26 +18,24 @@ $gutter: 15px;
 
 /* Fonts */
 $open: 'Open Sans', sans-serif;
-$roboto-c: 'Roboto Condensed', sans-serif;
-$roboto: 'Roboto', sans-serif;
+$serif: 'PT Serif', serif;
 
 $default-font: $open;
 $base-font-size: 16;
-$base-line-height: 30;
+$base-line-height: 26;
 $default-color: #333;
 
-$header: #112854;
+$header: $default-color;
 
 /* Colors */
-$red: #bd0112;
-$grey: #555;
-$menu: #2c66d3;
-$bkg-footer: #4f699b;
+$grey: #999;
+$orange: #f26c4b;
+$soft-orange: #ffc788;
 
 /* Links */
-$link: $red;
-$link-hov: $red;
+$link: #eda452;
+$link-hov: $orange;
 
 /* Components */
-$c-humburger-color: $menu;
-$scroll-up-color: $menu;
+$c-humburger-color: $orange;
+$scroll-up-color: $orange;

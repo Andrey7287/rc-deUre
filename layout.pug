@@ -5,6 +5,7 @@ html
     meta(name="viewport", content="initial-scale=1.0, width=device-width")
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
     link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700")
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=PT+Serif:400,700")
     link(rel="shortcut icon", href="./favicon.ico")
     
   body
@@ -13,44 +14,42 @@ html
         .container
           nav.site-nav-outer
             button.c-hamburger.c-hamburger--htx
-            ul.site-nav
-              li.site-nav__link
+            ul.site-nav.row
+              li.site-nav__link.col
                 a(href="/") О&nbsp;компании 
-              li.site-nav__link
+              li.site-nav__link.col
                 a(href="inner1") адвокаты
-              li.site-nav__drop
+              li.site-nav__drop.site-nav__drop_1.col
                 span Услуги физическим лицам 
                 .drop
                   ul.drop-menu
                     each li in ['Банкротство', 'Гражданские споры', 'Жилищные споры', 'Защита прав потребителей', 'Земельные споры', 'Наследственные дела', 'Семейные споры', 'Кредитные и долговые споры', 'Уголовные дела', 'Страховые споры']
                       li.drop-menu__item
                         a(href="#").drop-menu__link= li 
-                  a(href="#").btn.btn_w
-              li.site-nav__drop
+                  a(href="#").btn.btn_w получить консультацию
+              li.site-nav__drop.site-nav__drop_2.col
                 span Услуги юридическим лицам 
                 .drop
                   ul.drop-menu
                     each li in ['Банкротство', 'Гражданские споры', 'Жилищные споры', 'Защита прав потребителей', 'Земельные споры', 'Наследственные дела', 'Семейные споры', 'Кредитные и долговые споры', 'Уголовные дела', 'Страховые споры']
                       li.drop-menu__item
                         a(href="#").drop-menu__link= li
-                  a(href="#").btn.btn_w
-              li.site-nav__link
+                  a(href="#").btn.btn_w получить консультацию
+              li.site-nav__link.col
                 a(href="inner2") отзывы
-              li.site-nav__link
+              li.site-nav__link.col
                 a(href="inner1") контакты
-      .header__top
-        .container
-          .top-contacts
-            .logo
-              img(src="./images/logo.png", alt="logotip De-Ure")
-            .top-contacts__item
-              span Название улицы, дом 33, 51
-              a(href="mailto:info@mailexample.ru", title="info@mailexample.ru")
-            .top-contacts__item
-              span +7 (000) 000-00-00
-              a(href="#callBack", title="Обратный звонок") Обратный звонок
-      .header__slider
-        .container
+      .container
+        .header__top.row
+          img(src="./images/logo.png", alt="logotip De-Ure").site-logo
+          .top-contacts.col
+            div Название улицы, дом 33, 51
+            a(href="mailto:info@mailexample.ru", title="info@mailexample.ru") info@mailexample.ru
+          .top-contacts.col
+            div +7 (000) 000-00-00
+            a(href="#callBack", title="Обратный звонок") Обратный звонок
+      .container
+        .header__slider
           .slider.js-slider-1
             each val in [1,2]
               .slider__item
@@ -59,20 +58,40 @@ html
                     svg(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="650" height="530")
                       defs
                         filter#filter
-                          feGaussianBlur(stdDeviation="25")
+                          feGaussianBlur(stdDeviation="22")
                         mask#mask
-                          ellipse(cx="50%" cy="50%" rx="40%" ry="40%" fill="white" filter="url(#filter)")
+                          ellipse(cx="50%" cy="50%" rx="37%" ry="37%" fill="white" filter="url(#filter)")
                       image(xlink:href="./images/slider"+val+".jpg" width="650" height="530" mask="url(#mask)")
                   .slider__info.col
-                    .title Семейные споры
+                    .title Семейные<br />споры
                     p.
                       Мы всегда относимся с пониманием к эмоциональным переживаниям, обусловливающим всякого рода семейные прения, и в полной мере осознаем необходимость поиска деликатных и, в конечном счете, оптимальных решений. 
                     a(href="/moreinfo", title="подробнее").btn подробнее
           button.slider-arrow.js-slider-1-left previos
           button.slider-arrow.js-slider-1-right next
           //.slider-dots.js-slider-1-dots
-    main
+    <main>
       block content
+      .main-form
+        .container
+          .h1 юридическая консультация
+          form(action="")
+            .row
+              .col
+                input(type="text" placeholder="Имя" name="")
+              .col
+                input(type="tel" placeholder="Телефон" name="")
+              .col
+                input(type="email" placeholder="Почта" name="")
+            textarea(name="" placeholder="Краткое описание проблемы")
+            .rules.row
+              .rules__item.col
+                input(type="checkbox" id="idCheckbox")
+                label(for="idCheckbox")
+              .rules__item.col
+                a(href="#rules", title="Условия соглсано ФЗ “О защите персональных данных”") Условия соглсано ФЗ “О защите персональных данных”
+            input(type="submit").btn
+    </main>
     footer.footer
       .container
         .footer__top.row
@@ -80,11 +99,35 @@ html
             img(src="./images/logo.png", alt="logotip De-Ure")
           .footer__nav.col
             .title о компании
-              ul
-              
-
+            ul.footer-nav
+              each val in ['О компании','Адвокаты','Публикации','Клиенты']
+                li
+                  a= val
           .footer__nav.col
             .title услуги
+            ul.footer-nav
+              each val in ['Физическим лицам','Юридичским лицам','Записаться на консультацию']
+                li
+                  a= val
           .footer__nav.col
             .title контактная информация
-        .footer__bottom
+            .contacts
+              span.
+                Москва, Название улицы, дом 33, 51
+                +7 (000) 000-00-00  Обратный звонок
+                info@mailexample.ru
+              .soc
+                .soc__item
+                  span
+                .soc__item
+                  a(href="/fb", title="facebook").soc__link.soc__link_fb facebook
+                .soc__item
+                  a(href="/li", title="linkedIn").soc__link.soc__link_in linkedIn 
+        .footer__bottom.row
+          .col © Московская коллегия адвокатов «Де-Юре» 2017
+          .col 
+            a(href="/map", title="Карта сайта") Карта сайта
+            span |
+            a(href="/search", title="Поиск по сайту") Поиск по сайту
+          .col
+            a(href="http://infodesign.ru/", title="© Создание сайта и дизайн «Инфодизайн» 2017") © Создание сайта и дизайн «Инфодизайн» 2017 

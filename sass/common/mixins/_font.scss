@@ -1,4 +1,4 @@
-@mixin font($size: $base-font-size, $height: $base-line-height, $weight: 400, $context: $base-font-size, $font: $default-font){
+@mixin font($size: $base-font-size, $height: $base-line-height, $weight: 400, $font: $default-font, $context: $base-font-size){
 
 	font-weight: $weight;
 

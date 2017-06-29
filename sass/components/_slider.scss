@@ -3,84 +3,17 @@
 	position: relative;
 }
 /**** SLIDER ****/
-.slider {
-	&__item {
-		position: relative;
-		min-height: 435px;
-		@include mq(md) {
-			min-height: 380px;
-		}
-	}
-	&__img {
-		position: absolute;
-		top:0;
-		right: 0;
-		bottom: 0;
-		left:0;
-		max-width: inherit;
-		margin: auto;
-	}
-	&__inner {
-		display: flex;
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		flex-direction: column;
-		justify-content: center;
-	}
-	&__txt {
-		color: #fff;
-		padding: 15px;
-		text-align: right;
+.slider{
+	&__info {
+		padding-top: 90px;
 		.title {
-
+			@include font(54,54,400,$serif);
+			text-transform: uppercase;
 		}
-		.txt {
-
-		}
-	}
-
-}
-.slider-dots {
-	width: 40%;
-	position: absolute;
-	right: 0;
-	bottom: 60px;
-	@include mq(md) {
-		width: 50%;
-		bottom: 40px;
-	}
-}
-/**** DOTS ****/
-.slick-dots {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	display: inline-block;
-	li {
-		display: inline-block;
-		margin: 0 3px;
-		button {
-			text-indent: -9999px;
-			border: 0;
-			padding: 0;
-			background-color: transparent;
-			@include sprite($dot);
-		}
-		&.slick-active {
-			button {
-				@include sprite($dot_act);
-			}
-		}
-		&:hover {
-			button {
-				@include sprite($dot_act);
-			}
+		p {
+			padding-right: 70px;
 		}
 	}
-
 }
 
 /**** ARROWS ****/
@@ -98,9 +31,15 @@
 	&:first-of-type {
 		left: 13px;
 		@include sprite($arrow_left);
+		&:hover {
+			@include sprite($arrow-hov_left);
+		}
 	}
 	&:last-of-type {
 		right: 13px;
 		@include sprite($arrow_right);
+		&:hover {
+			@include sprite($arrow-hov_right);
+		}
 	}
 }

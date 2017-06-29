@@ -3,11 +3,11 @@ html {
 	min-height: 100%;
 	display: flex;
 	flex-direction: column;
-	@include font;
 	color: $default-color;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 	box-sizing: border-box;
+	@include font;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -45,7 +45,7 @@ main {
 }
 .col {
 	padding: 0 $gutter;
-	flex: auto;
+	flex: 1;
 }
 
 // Normalize
@@ -84,6 +84,7 @@ a {
 	color: $link;
 	line-height: 1.5;
 	display: inline-block;
+	transition: color .2s ease-in;
 	&:active,
 	&:hover {
 		outline-width: 0;
@@ -93,8 +94,12 @@ a {
 			color: $link-hov;
 		}
 	}
-	&[href^="mailto"]{
-
+	&[href^='#']{
+		text-decoration: none;
+		border-bottom: 1px dashed $link;
+		&:hover {
+			border-bottom: 1px dashed transparent;
+		}
 	}
 	&.block-link {
 		text-decoration: none;
@@ -251,6 +256,86 @@ h5, .h5 {
 		@include mq(sm){
 			td {
 				padding-left: 10px;
+			}
+		}
+	}
+}
+.btn {
+	@include font(20,30,400,$serif);
+	padding: 9px 20px;
+	border: 1px solid #fff;
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	background-image: linear-gradient(to bottom, #f26c4b 0%, #eda652 51%, #f26c4b 100%);
+	background-size: 200%;
+	transition: background-position .2s ease-in-out; 
+	&:hover {
+		color: #fff;
+		background-position: bottom center;
+	}
+	&_w {
+		position: relative;
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		text-fill-color: transparent;
+		border-top: 1px solid #f26b4b;
+		border-bottom: 1px solid #eda652!important;
+		transition: all .2s ease-in-out; 
+		&::before {
+			content: " ";
+			position: absolute;
+			display: block;
+			width: 1px;
+			height: 100%;
+			top:0;
+			right: -1px;
+			background-image: linear-gradient(to bottom, #f26c4b 0%, #eda652 51%, #f26c4b 100%);
+			background-size: 200%;
+			transition: all .2s ease-in-out; 
+		}
+		&::after {
+			content: " ";
+			position: absolute;
+			width: 1px;
+			height: 100%;
+			top:0;
+			left: -1px;
+			background-image: linear-gradient(to bottom, #f26c4b 0%, #eda652 51%, #f26c4b 100%);
+			background-size: 200%;
+		}
+		&:hover {
+			border-bottom: 1px solid #f26b4b!important;
+			border-top: 1px solid #eda652;
+			&::before {
+				background-position: bottom center;
+			}
+			&::after {
+				background-position: bottom center;
+			}
+		}
+	}
+}
+
+.drop {
+	ul {
+		margin: 7px 0 15px;
+		padding: 0;
+		list-style: none;
+		li {
+			@include font(18,20);
+			padding: 5px 0 5px 30px;
+			position: relative;
+			&::before{
+				content: " ";
+				display: block;
+				width: 22px;
+				height: 1px;
+				background-color: $default-color;
+				position: absolute;
+				left: 0;
+				top: 20px;
 			}
 		}
 	}

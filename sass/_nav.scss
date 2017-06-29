@@ -1,13 +1,117 @@
+.site-nav-outer {
+	padding: 148px 0 17px;
+}
 .site-nav{
-	display: flex;
-	@include mq(md){
-		flex-direction: column;
-		display: none;
-	}
-	&__item {
-		flex-grow: 1;
-		a {
+	height: 50px;
+	&__link,
+	&__drop {
+		& > a,
+		& > span  {
 			display: inline-block;
+			width: 100%;
+			@include font(20,30,700,$serif);
+			padding: 10px 0;
+			color: #fff;
+			text-align: center;
+			text-transform: uppercase;
+			text-decoration: none;
+		}
+		& > a {
+			border-top: 1px solid #76828c;
+			border-bottom: 1px solid #76828c;
+			transition: background .2s ease-in;
+			&:hover {
+				background: #76828c;
+			}
+		}
+		& > span {
+			@include font(18,22,700,$serif);
+			background: linear-gradient(to bottom, rgba(242,107,75,1) 0%,rgba(237,163,81,1) 100%);
+			position: relative;
+			&::after{
+				content: " ";
+				display: block;
+				@include sprite($drop-border);
+				position: absolute;
+				top: 100%;
+			}
+			&::before{
+				content: " ";
+				display: block;
+				@include sprite($drop-border_act);
+				position: absolute;
+				top: 100%;
+				transition: height .3s ease-in;
+				height: 0;
+			}
+			&:hover {
+				&::before {
+					height: 43px;
+				}
+			}
+		}
+	}
+	.drop {
+		background: #f4f0eb;
+		position: absolute;
+		width: 650px;
+		top: 82px;
+		padding: 20px;
+		display: none;
+		transition: top .3s ease-in;
+		&::before {
+			content: " ";
+			display: block;
+			@include sprite($drop-border_act);
+			position: absolute;
+			bottom: 100%;
+			left: 0;
+		}
+		.btn {
+			margin: 10px auto;
+			display: block;
+			width: 360px;
+			text-align: center;
+		}
+		&_act {
+			top: 126px;
+		}
+	}
+	&__drop {
+		position: relative;
+		top: -148px;
+		&_1 {
+			right: 95px;
+		}
+		&_2 {
+			left: 95px;
+			.drop {
+				right: $gutter;
+				&::before {
+					left: inherit;
+					right: 0;
+				}
+			}
+		}
+		& > span {
+			cursor: pointer;
+		}
+	}
+	
+}
+.drop-menu {
+	column-count: 2;
+	li {
+		a {
+			color: #3d4e5b;
+			border: 0;
+			&:hover {
+				color: #e84a23;
+				border: 0;
+			}
+		}
+		&:before {
+			background-color: #88a0b5;
 		}
 	}
 }
