@@ -29,7 +29,18 @@
 	height: 100%;
 	&__item {
 		height: 100%;
-
+		padding: 0 15px;
+	}
+	&__inner {
+		padding-bottom: 100%;
+		position: relative;
+		overflow: hidden;
+		img {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
 	}
 }
 /**** ARROWS ****/

@@ -1,8 +1,14 @@
 .custom {
-  background: linear-gradient(to bottom, #cbdce8 0%, #f6f2ee 100%);
+  &__inner {
+    background: linear-gradient(to bottom, #cbdce8 0%, #f6f2ee 100%);
+  }
   .col {
     &:first-child {
       flex-basis: 25%;
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
     }
     &:last-child {
       flex-basis: 75%;

@@ -84,38 +84,38 @@ html
               .col
                 input(type="email" placeholder="Почта" name="")
             textarea(name="" placeholder="Краткое описание проблемы")
-            .rules.row
-              .rules__item.col
+            .form-rules.row
+              .form-rules__item.col
                 input(type="checkbox" id="idCheckbox")
-                label(for="idCheckbox")
-              .rules__item.col
+                label(for="idCheckbox") Согласен на обработку моих персональных данных МГКА «Де-Юре»
+              .form-rules__item.col
                 a(href="#rules", title="Условия соглсано ФЗ “О защите персональных данных”") Условия соглсано ФЗ “О защите персональных данных”
             input(type="submit").btn
     </main>
     footer.footer
       .container
         .footer__top.row
-          .logo
-            img(src="./images/logo.png", alt="logotip De-Ure")
+          img(src="./images/logo.png", alt="logotip De-Ure").site-logo
           .footer__nav.col
             .title о компании
-            ul.footer-nav
+            ul.footer-menu
               each val in ['О компании','Адвокаты','Публикации','Клиенты']
                 li
-                  a= val
+                  a(href="/")= val
           .footer__nav.col
             .title услуги
-            ul.footer-nav
+            ul.footer-menu
               each val in ['Физическим лицам','Юридичским лицам','Записаться на консультацию']
                 li
-                  a= val
+                  a(href="/")= val
           .footer__nav.col
             .title контактная информация
             .contacts
               span.
                 Москва, Название улицы, дом 33, 51
-                +7 (000) 000-00-00  Обратный звонок
-                info@mailexample.ru
+                +7 (000) 000-00-00
+              a(href="#callto", title="Обратный звонок") Обратный звонок
+              a(href="mailto:info@mailexample.ru", title="info@mailexample.ru") info@mailexample.ru 
               .soc
                 .soc__item
                   span

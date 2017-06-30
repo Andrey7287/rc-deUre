@@ -1,6 +1,37 @@
 .footer {
+	background: linear-gradient(to bottom, #304351 0%, #d6d1cb 100%);
 	padding: 25px 0;
+	color: #fff;
+	a {
+		color: #fff;
+		border-bottom-color: #fff!important; 
+		&:hover {
+			border-bottom-color: transparent!important; 
+		}
+	}
 	.infodisign {
 		text-align: right;
+	}
+	&__top {
+		position: relative;
+	}
+	&__nav {
+		flex-basis: 16.666%;
+		flex-grow: 0;
+		&:last-child {
+			flex-basis:  33.333%;
+			margin-left: auto;
+		}
+		.title {
+			@include font(20,30,700,$serif);
+			text-transform: uppercase;
+			border-bottom: 1px solid #7e888d;
+		}
+	}
+}
+.footer-menu {
+	a {
+		text-decoration: none;
+		@include font(18,20,300);
 	}
 }

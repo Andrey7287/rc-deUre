@@ -1,28 +1,34 @@
+//logo as bkg
+.site-logo {
+	position: absolute;
+	top: 34px;
+	right: calc(50% - 85px);
+}
+
 //Lists
 
-.drop {
-	ul {
-		margin: 7px 0 15px;
-		padding: 0;
-		list-style: none;
-		li {
-			@include font(18,20);
-			padding: 5px 0 5px 30px;
-			position: relative;
-			&::before{
-				content: " ";
-				display: block;
-				width: 22px;
-				height: 1px;
-				background-color: $default-color;
-				position: absolute;
-				left: 0;
-				top: 20px;
-			}
+.drop ul,
+.footer-menu {
+	margin: 7px 0 15px;
+	padding: 0;
+	list-style: none;
+	li {
+		@include font(18,20);
+		padding: 5px 0 5px 28px;
+		position: relative;
+		line-height: 1.25em;
+		&::before{
+			content: " ";
+			display: block;
+			width: 22px;
+			height: 1px;
+			background-color: #7e888d;
+			position: absolute;
+			left: 0;
+			top: 0.9em;
 		}
 	}
 }
-
 //Tables
 
 .table {

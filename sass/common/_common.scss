@@ -91,7 +91,7 @@ a {
 	background-color: transparent;
 	color: $link;
 	display: inline-block;
-	transition: color .2s ease-in;
+	transition: all .2s ease-in;
 	&:active,
 	&:hover,
 	&:focus,
@@ -99,21 +99,29 @@ a {
 		outline-width: 0;
 		color: $link-hov;
 		text-decoration: none;
-		h3, .h3 {
-			color: $link-hov;
-		}
 	}
-	&[href^='#']:not(.btn){
+	&[href^='#']:not(.btn),
+	&[href^='mailto'] {
 		text-decoration: none;
+	}
+	&[href^='#']:not(.btn) {
 		border-bottom: 1px dashed $link;
 		&:hover,
-		&.act {
+		&.act,
+		&:focus {
 			border-bottom: 1px dashed transparent;
 		}
 	}
-	&.block-link {
-		text-decoration: none;
-		color: $default-color;
+	&[href^='mailto']{
+		border-bottom: 1px solid $head-link;
+		&:hover,
+		&.act,
+		&:focus {
+			border-bottom: 1px solid transparent;
+		}
+	}
+	&:focus {
+		outline: 1px solid $soft-orange;
 	}
 }
 

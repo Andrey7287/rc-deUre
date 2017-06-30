@@ -13,9 +13,7 @@
   &__top {
     position: relative;
     .site-logo {
-      position: absolute;
       top: 34px;
-      right: calc(50% - 85px);
     }
     .top-contacts {
       padding-top: 46px;
@@ -27,14 +25,14 @@
       @include font(20,25,300);
       a {
         display: inline-block;
-        color: #ffc687;
+        color: $head-link;
       }
       &__phone {
         @include font(24,27,300,$open,20);
         margin-bottom: 6px;
       }
       &__addr {
-        margin-bottom: 12px;
+        margin-bottom: 8px;
       }
       &:last-child{
         text-align: right;

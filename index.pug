@@ -58,27 +58,20 @@ block content
               p.
                 Адвокаты нашей компании — профессионалы, имеющие очень серьезный опыт решения самых разнообразных вопросов.
               a(href="#", title="все адвокаты").btn.btn_w все адвокаты
-  .custom
-    .container
-      .row
-        .col
-          .h1 клиенты
-          p Каждому клиенту мы оказываем грамотную консультативную помощь и организуем защиту интересов в суде. 
-        .col
-          .slider-wrapp
-            .slider2.js-slider-2
-              each val in [1,2,3,4,5]
-                .slider2__item
-                  .slider2__inner
-                    img(src="./images/client"+val+".jpg")
-            button.slider-arrow_small.js-slider-2-left previos
-            button.slider-arrow_small.js-slider-2-right next
-
-              
-
-                
-
-
-
-
+  .custom.block
+    .custom__inner
+      .container
+        .row
+          .col
+            .h1 клиенты
+            p Каждому клиенту мы оказываем грамотную консультативную помощь и организуем защиту интересов в суде. 
+          .col
+            .slider-wrapp
+              .slider2.js-slider-2
+                each val in [1,2,3,4,5]
+                  .slider2__item
+                    .slider2__inner
+                      img(src="./images/client"+val+".jpg")
+              button.slider-arrow_small.js-slider-2-left previos
+              button.slider-arrow_small.js-slider-2-right next
   // Footer start here
