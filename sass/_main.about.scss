@@ -1,0 +1,39 @@
+.about {
+  background-image: url(../images/about-bkg.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  &__inner {
+    width: 945px;
+    color: #fff;
+    background: linear-gradient(to bottom, #adb6bb 0%, #304351 100%);
+    padding: 50px 130px;
+    position: relative;
+    &:before,
+    &:after {
+      content: " ";
+      position: absolute;
+      display: block;
+      width: 70px;
+      height: 70px;
+      border: 1px solid #cfd9de;
+    }
+    &:before {
+      top: 75px;
+      left: 97px;
+      border-width: 1px 0 0 1px;
+    }
+    &:after {
+      bottom: 75px;
+      right: 97px;
+      border-width: 0 1px 1px 0;
+    }
+    p {
+      margin: 35px 0;
+    }
+    .btn {
+      display: block;
+      width: 360px;
+      margin: 15px auto;
+    }
+  }
+}

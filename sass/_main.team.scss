@@ -1,0 +1,65 @@
+.team {
+  &__item {
+    height: 100%;
+    overflow: hidden;
+    .all {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      justify-content: center;
+      background-image: url(../images/team4.jpg);
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      text-align: center;
+      transform: translateY(-10px);
+      p {
+        margin: 20px 0;
+      }
+      .h1 {
+        color: #555;
+      }
+    }
+  }
+}
+.lawyer {
+  position: relative;
+  overflow: hidden;
+  padding: 288px 14px 18px;
+  &__img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: none;
+    z-index: 2;
+  }
+  figcaption a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 3;
+    background: rgba(62,80,93,.9);
+    padding: 10px 5px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    transition: background .2s ease-in;
+    border: 1px solid #7da4ac;
+    &:hover {
+      background: rgba(62,80,93,.66);
+    }
+    .m-title {
+      color: #fff!important;
+      &::after {
+        background: #7da4ac;
+      }
+    }
+    span {
+      @include font(14,20);
+    }
+  }
+}
+

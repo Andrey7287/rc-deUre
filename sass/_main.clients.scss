@@ -1,0 +1,12 @@
+.custom {
+  background: linear-gradient(to bottom, #cbdce8 0%, #f6f2ee 100%);
+  .col {
+    &:first-child {
+      flex-basis: 25%;
+    }
+    &:last-child {
+      flex-basis: 75%;
+      width: 75%;
+    }
+  }
+}

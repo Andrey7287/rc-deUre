@@ -31,6 +31,7 @@
       }
       &__phone {
         @include font(24,27,300,$open,20);
+        margin-bottom: 6px;
       }
       &__addr {
         margin-bottom: 12px;

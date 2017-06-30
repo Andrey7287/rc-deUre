@@ -1,6 +1,8 @@
 
 .slider-wrapp {
 	position: relative;
+	height: 100%;
+	padding: 90px 80px;
 }
 /**** SLIDER ****/
 .slider{
@@ -23,6 +25,13 @@
 	}
 }
 
+.slider2 {
+	height: 100%;
+	&__item {
+		height: 100%;
+
+	}
+}
 /**** ARROWS ****/
 .slider-arrow {
 	position: absolute;
@@ -36,17 +45,48 @@
 		cursor: pointer;
 	}
 	&:first-of-type {
-		left: 13px;
+		left: 0;
 		@include sprite($arrow_left);
 		&:hover {
 			@include sprite($arrow-hov_left);
 		}
 	}
 	&:last-of-type {
-		right: 13px;
+		right: 0;
 		@include sprite($arrow_right);
 		&:hover {
 			@include sprite($arrow-hov_right);
 		}
+	}
+}
+.slider-arrow_small {
+	position: absolute;
+	font-size: 0;
+	padding: 0;
+	border: 0;
+	line-height: 0;
+	top: calc(50% - 18px);
+	padding: 5px 10px;
+  background: #fff;
+  border: 1px solid #fff;
+  transition: all .2s ease-in;
+	&:first-of-type {
+		&::before{
+			content: " ";
+			display: block;
+			@include sprite($arrow-small_left);
+		}
+		left: 30px;
+	}
+	&:last-of-type {
+		&::before {
+			content: " ";
+			display: block;
+			@include sprite($arrow-small_right);
+		}
+		right: 30px;
+	}
+	&:hover {
+		border: 1px solid $orange;
 	}
 }

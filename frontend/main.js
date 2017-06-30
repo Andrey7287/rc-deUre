@@ -11,6 +11,7 @@ require('./modules/ymap');
 import '../sass/css.scss';
 import OnResize from './modules/resize';
 import scrollup from './modules/scrollup';
+import './modules/ravno';
 
 /* Define project components and variables */
 var	mobileView = window.matchMedia("(max-width: 768px)").matches,
@@ -54,8 +55,27 @@ $('.c-hamburger').on('click', function(){
 $('.js-slider-1').slick({
 	prevArrow: $('.js-slider-1-left'),
 	nextArrow: $('.js-slider-1-right'),
-	dots: true,
-	appendDots: $('.js-slider-1-dots')
+
+});
+
+/***********************
+******* SLIDER 2 *******
+************************/
+
+$('.js-slider-2').slick({
+	prevArrow: $('.js-slider-2-left'),
+	nextArrow: $('.js-slider-2-right'),
+	slidesToShow: 4,
+	slidesToScroll: 1,
+	infinite: true,
+	responsive: [
+    {
+      breakpoint: 333,
+      settings: {
+        slidesToShow: 3
+      }
+		}
+	]
 });
 
 /************************
@@ -86,3 +106,33 @@ $(document).scroll(function(){
 });
 
 $('.scrollup').scrollUp();
+
+/************************
+**** Toggle services ****
+*************************/
+
+$('.services__toggle').on('click', '[data-toggle]', function(e){
+
+	e.preventDefault();
+
+	var idx = $(this).attr('data-toggle') - 1,
+			services = $('.services__block');
+	
+	$('[data-toggle]').removeClass('act');
+	$(this).addClass('act');
+
+	$(services).stop().fadeOut(200);//.removeClass('act');
+	$(services[idx]).stop().fadeIn(800);//.addClass('act');
+
+});
+
+/************************
+********* Ravno *********
+*************************/
+
+var $services = $('.services');
+if ( $services.length ) {
+	$(document).ready(function(){
+		$services.find('.m-title').ravno();
+	});
+}
