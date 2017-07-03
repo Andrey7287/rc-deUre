@@ -1,7 +1,10 @@
 .footer {
-	background: linear-gradient(to bottom, #304351 0%, #d6d1cb 100%);
+	background: linear-gradient(to bottom, #304351 0%, #757e84 235px, #d6d1cb 100%);
 	padding: 25px 0;
 	color: #fff;
+	.site-logo {
+		top: 7px;
+	}
 	a {
 		color: #fff;
 		border-bottom-color: #fff!important; 
@@ -26,12 +29,83 @@
 			@include font(20,30,700,$serif);
 			text-transform: uppercase;
 			border-bottom: 1px solid #7e888d;
+			padding-bottom: 10px;
+		}
+	}
+	&__bottom {
+		@include font(14,20,300);
+		color: #4d5c67;
+		text-align: center;
+		padding: 15px 0 20px;;
+		border-top: 1px solid #969a9c;
+		margin-top: 10px;
+		a {
+			color: #4d5c67;
+		}
+		.col{
+			&:first-child{
+				text-align: left;
+			}
+			&:last-child{
+				text-align: right;
+			}
+		}
+	}
+	.contacts {
+		margin-top: 12px;
+		@include font(18,20,300);
+		.addr {
+			margin-bottom: 12px;
+		}
+		.tel {
+			white-space: nowrap;
+			margin-right: 5px;
+		}
+		[href^=mailto] {
+			display: inline-block;
+			margin-top: 9px;
 		}
 	}
 }
 .footer-menu {
+	li {
+			padding-bottom: 11px;
+	}
 	a {
 		text-decoration: none;
-		@include font(18,20,300);
+		font-weight: 300;
 	}
+}
+.soc {
+	display: flex;
+	margin-top: 30px;
+	&__item {
+		flex: auto;
+		flex-grow: 0;
+		align-items: center;
+    display: inline-flex;
+	}
+	&__title {
+		margin-right: 15px;
+	}
+	&__link {
+		@include font(0);
+		opacity: .5;
+		margin-left: 7px;
+		transition: opacity .2s ease-in;
+		&:hover {
+			opacity: 1;
+		}
+		&_fb {
+			@include sprite($ico-fb);
+		}
+		&_in {
+			@include sprite($ico-in);
+		}
+	}
+}
+
+.infodesign {
+	text-decoration: none;
+
 }
