@@ -136,6 +136,26 @@ $('.js-slider-2').slick({
 	]
 });
 
+/***********************
+******* SLIDER 3 *******
+************************/
+
+$('.js-slider-3').slick({
+	prevArrow: $('.js-slider-3-left'),
+	nextArrow: $('.js-slider-3-right'),
+	slidesToShow: 2,
+	slidesToScroll: 1,
+	infinite: true,
+	responsive: [
+    {
+      breakpoint: 333,
+      settings: {
+        slidesToShow: 1
+      }
+		}
+	]
+});
+
 /************************
 ******* Scroll Up *******
 *************************/

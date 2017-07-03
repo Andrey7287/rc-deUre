@@ -98,4 +98,17 @@ block content
                       img(src="./images/client"+val+".jpg")
               button.slider-arrow_small.js-slider-2-left previos
               button.slider-arrow_small.js-slider-2-right next
+  .container
+    .feedbacks.block
+      .h1 Отзывы
+      .slider-wrapp.slider-wrapp_feedback
+        .slider3.js-slider-3
+          each val in ['Екатерина Л.','Владимир Б.','Лора П.']
+            .slider3__item
+              .feedback.
+                 Хочется обратиться со словами благодарности к тем, кто помог мне в решении вопроса жилья. Никогда не думала, что окажусь в такой ситуации. Моя мать хотела добиться моего выселения из квартиры и снятия с учета. Спасибо Латыновой Елене Васильевне за то, что помогла мне и поддержала, только с ее помощью меня не лишили жилья.
+              .author= val
+        button.slider-arrow_small.slider-arrow_small2.js-slider-3-left previos
+        button.slider-arrow_small.slider-arrow_small2.js-slider-3-right next
+
   // Footer start here

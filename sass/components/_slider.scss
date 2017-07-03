@@ -3,6 +3,9 @@
 	position: relative;
 	height: 100%;
 	padding: 90px 80px;
+	&_feedback {
+		padding: 35px 83px;
+	}
 }
 /**** SLIDER ****/
 .slider{
@@ -19,12 +22,6 @@
 		@include mq(md) {
 			text-align: center;
 		}
-		svg {
-			@include mq(lg){
-				//width: 500px;
-				//height: 408px;
-			}
-		}
 	}
 	&__info {
 		padding-top: 90px;
@@ -32,6 +29,7 @@
 			padding-top: 25px;
 		}
 		@include mq(sm) {
+			flex-basis: 100%;
 			padding-top: 0;
 			margin-top: -20px;
 		}
@@ -90,6 +88,39 @@
 		}
 	}
 }
+
+.slider3 {
+	&__item {
+		padding-left: $gutter;
+		padding-right: $gutter;
+	}
+	.feedback {
+		border: 1px solid #e5e7e9;
+		padding: 25px 15px;
+		margin: 20px 0 20px;
+		position: relative;
+		&::before {
+			content: " ";
+			display: block;
+			position: absolute;
+			top: -19px;
+			left: 10px;
+			@include sprite($ico-feedback);
+		}
+		&::after {
+			content: " ";
+			display: block;
+			position: absolute;
+			bottom: -11px;
+			left: 45px;
+			@include sprite($feedback-corn);
+		}
+	}
+	.author {
+		@include font(22,26,700,$serif);
+	}
+}
+
 /**** ARROWS ****/
 .slider-arrow {
 	position: absolute;
@@ -134,6 +165,9 @@
   background: #fff;
   border: 1px solid #fff;
   transition: all .2s ease-in;
+	&2 {
+		background: #f2f3f8;
+	}
 	&:first-of-type {
 		&::before{
 			content: " ";
