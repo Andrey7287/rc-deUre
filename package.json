@@ -12,9 +12,9 @@
     "install-prod": "npm install --production"
   },
   "repository": {
-		"type": "git",
-		"url": "git+https://github.com/Andrey7287/rc-deUre.git"
-	},
+    "type": "git",
+    "url": "git+https://github.com/Andrey7287/rc-deUre.git"
+  },
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "6.7.7",
@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "jquery": "^3.1.1",
+    "jquery-colorbox": "^1.6.4",
     "slick-carousel": "^1.6.0"
   }
 }

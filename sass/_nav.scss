@@ -1,12 +1,47 @@
 .site-nav-outer {
 	padding: 148px 0 17px;
 	transition: padding .1s ease-in-out;
+	@include mq(sm) {
+		padding: 267px 0 17px;
+	}
 	.slim & {
 		padding: 17px 0;
 	}
 }
+.site-nav-toggle {
+	position: relative;
+	background: transparent;
+	border: 0;
+	color: #fff;
+	@include font(18,30,700,$serif);
+	border-top: 1px solid #76828c;
+  border-bottom: 1px solid #76828c;
+	padding: 3px 3px 3px 33px;
+	width: calc( 50% - 5px );
+	text-align: left;
+	display: none;
+	outline: none;
+	@include mq(sm) {
+		display: block;
+	}
+	&::before {
+		content: " ";
+		display: block;
+		@include sprite($mobile-menu-ico);
+		position: absolute;
+		top: 12px;
+		left: 9px;
+	}
+}
 .site-nav{
 	height: 48px;
+	@include mq(md){
+		font-size: 0.9em;
+	}
+	@include mq(sm){
+		display: block;
+		height: 0;
+	}
 	&__link,
 	&__drop {
 		& > a,
@@ -24,6 +59,9 @@
 			border-top: 1px solid #76828c;
 			border-bottom: 1px solid #76828c;
 			transition: background .2s ease-in;
+			@include mq(sm) {
+				background: #76828c;
+			}
 			&:hover {
 				background: #76828c;
 			}
@@ -34,6 +72,9 @@
 			position: relative;
 			padding: 26px 0 16px;
 			transition: padding .1s ease-in-out;
+			@include mq(sm) {
+				padding: 12px 5px;
+			}
 			.slim & {
 				padding: 10px 0;
 			}
@@ -43,6 +84,9 @@
 				@include sprite($drop-border);
 				position: absolute;
 				top: 100%;
+				@include mq(sm){
+					display: none;
+				}
 			}
 			&::before{
 				content: " ";
@@ -52,6 +96,9 @@
 				top: 100%;
 				transition: height .3s ease-in;
 				height: 0;
+				@include mq(sm){
+					display: none;
+				}
 			}
 			&.act {
 				&::before {
@@ -60,45 +107,47 @@
 			}
 		}
 	}
-	.drop {
-		background: #f4f0eb;
-		position: absolute;
-		width: 650px;
-		top: 104px;
-		padding: 20px;
-		display: none;
-		transition: top .3s ease-in;
-		.slim & {
-			top: 82px;
-		}
-		.btn {
-			margin: 15px auto 25px;
-			display: block;
-			width: 360px;
-			text-align: center;
-		}
-		&_act {
-			top: 148px;
-			.slim & {
-				top: 126px;
-			}
+	&__link {
+		@include mq(sm) {
+			display: none;
 		}
 	}
 	&__drop {
 		position: relative;
 		top: -148px;
 		transition: all .1s ease-in-out;
+		@include mq(lg){
+			position: absolute;
+			top:0;
+			width: 195px;
+		}
+		@include mq(sm){
+			width: calc(50% + #{$gutter});
+			top: 172px;
+		}
 		.slim & {
 			top: -17px;
 		}
 		&_1 {
 			right: 95px;
+			@include mq(lg) {
+				right: 50%;
+			}
+			@include mq(sm) {
+				padding-right: 5px;
+			}
 			.slim & {
 				right: -17px;
 			}
 		}
 		&_2 {
 			left: 95px;
+			@include mq(lg) {
+				left: 50%;
+			}
+			@include mq(sm) {
+				padding-left: 5px;
+			}
 			.slim & {
 				left: 0;
 			}
@@ -116,19 +165,50 @@
 	}
 	
 }
-.drop-menu {
-	column-count: 2;
-	li {
-		a {
-			color: #3d4e5b;
-			border: 0;
-			&:hover {
-				color: #e84a23;
-				border: 0;
-			}
+.drop {
+	background: #f4f0eb;
+	position: absolute;
+	width: 650px;
+	top: 104px;
+	padding: 20px;
+	display: none;
+	transition: top .3s ease-in;
+	&.forLightBox {
+		position: static;
+		display: block;
+	}
+	.slim & {
+		top: 82px;
+	}
+	.btn {
+		margin: 15px auto 25px;
+		display: block;
+		width: 360px;
+		text-align: center;
+	}
+	&_act {
+		top: 148px;
+		.slim & {
+			top: 126px;
 		}
-		&:before {
-			background-color: #88a0b5;
+	}
+	.drop-menu {
+		column-count: 2;
+		@include mq(sm){
+			column-count: inherit;
+		}
+		li {
+			a {
+				color: #3d4e5b;
+				border: 0;
+				&:hover {
+					color: #e84a23;
+					border: 0;
+				}
+			}
+			&:before {
+				background-color: #88a0b5;
+			}
 		}
 	}
 }

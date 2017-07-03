@@ -9,18 +9,18 @@ html
     link(rel="shortcut icon", href="./favicon.ico")
     
   body
-    header.header
+    <header class="header">
       .header__menu
         .container
           nav.site-nav-outer
-            button.c-hamburger.c-hamburger--htx
+            button.site-nav-toggle меню
             ul.site-nav.row
               li.site-nav__link.col
                 a(href="/") О&nbsp;компании 
               li.site-nav__link.col
                 a(href="inner1") адвокаты
               li.site-nav__drop.site-nav__drop_1.col
-                span.drop-trigger Услуги физическим лицам 
+                span.drop-trigger Услуги<br /> физическим<br /> лицам 
                 .drop
                   ul.drop-menu
                     each li in ['Банкротство', 'Гражданские споры', 'Жилищные споры', 'Защита прав потребителей', 'Земельные споры', 'Наследственные дела', 'Семейные споры', 'Кредитные и долговые споры', 'Уголовные дела', 'Страховые споры']
@@ -28,7 +28,7 @@ html
                         a(href="#").drop-menu__link= li 
                   a(href="#").btn.btn_w получить консультацию
               li.site-nav__drop.site-nav__drop_2.col
-                span.drop-trigger Услуги юридическим лицам 
+                span.drop-trigger Услуги<br /> юридическим<br /> лицам 
                 .drop
                   ul.drop-menu
                     each li in ['Банкротство', 'Гражданские споры', 'Жилищные споры', 'Защита прав потребителей', 'Земельные споры', 'Наследственные дела', 'Семейные споры', 'Кредитные и долговые споры', 'Уголовные дела', 'Страховые споры']
@@ -47,30 +47,7 @@ html
             a(href="mailto:info@mailexample.ru", title="info@mailexample.ru") info@mailexample.ru
           .top-contacts.col
             div.top-contacts__phone +7 (000) 000-00-00
-            a(href="#callBack", title="Обратный звонок") Обратный звонок
-      .container
-        .header__slider
-          .slider.js-slider-1
-            each val in [1,2]
-              .slider__item
-                .slider__inner.row
-                  .slider__pic.col
-                    svg(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="650" height="530")
-                      defs
-                        filter#filter
-                          feGaussianBlur(stdDeviation="22")
-                        mask#mask
-                          ellipse(cx="50%" cy="50%" rx="37%" ry="37%" fill="white" filter="url(#filter)")
-                      image(xlink:href="./images/slider"+val+".jpg" width="650" height="530" mask="url(#mask)")
-                  .slider__info.col
-                    .title Семейные<br />споры
-                    p.
-                      Мы всегда относимся с пониманием к эмоциональным переживаниям, обусловливающим всякого рода семейные прения, и в полной мере осознаем необходимость поиска деликатных и, в конечном счете, оптимальных решений. 
-                    a(href="/moreinfo", title="подробнее").btn подробнее
-          button.slider-arrow.js-slider-1-left previos
-          button.slider-arrow.js-slider-1-right next
-          //.slider-dots.js-slider-1-dots
-    <main>
+            a(href="#callBack", title="Обратный звонок").top-contacts__call-back Обратный звонок
       block content
       .main-form
         .container

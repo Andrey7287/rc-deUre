@@ -5,6 +5,10 @@
     position: fixed;
     width: 100%;
     z-index: 10;
+    @include mq(lg) {
+      position: absolute;
+      
+    }
     &.slim {
       background: linear-gradient(to bottom, #304351 0%, #3e4f5b 100%);
       z-index: 12;
@@ -12,8 +16,24 @@
   }
   &__top {
     position: relative;
+    @include mq(lg) {
+      margin-bottom: 20px
+    }
     .site-logo {
       top: 34px;
+      @include mq(lg){
+        position: static;
+        width: 115px;
+        height: 124px;
+        margin-top: 10px;
+        margin-left: 40px;
+      }
+      @include mq(sm){
+        position: absolute;
+        width: 125px;
+        height: 135px;
+        top: 10px;
+      }
     }
     .top-contacts {
       padding-top: 46px;
@@ -23,6 +43,24 @@
       position: relative;
       z-index: 11;
       @include font(20,25,300);
+      &:first-of-type {
+        @include mq(lg) {
+          display: none;
+        }
+      }
+      @include mq(md){
+        font-size: 1em;
+      }
+      @include mq(sm){
+        @include font(14,20);
+        position: absolute;
+        flex-basis: 50%;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 5px;
+        top: 262px;
+        left: 50%
+      }
       a {
         display: inline-block;
         color: $head-link;
@@ -30,6 +68,10 @@
       &__phone {
         @include font(24,27,300,$open,20);
         margin-bottom: 6px;
+        @include mq(sm) {
+          @include font(16,20,700,$open,14);
+          margin-bottom: 3px;
+        }
       }
       &__addr {
         margin-bottom: 8px;
@@ -37,10 +79,16 @@
       &:last-child{
         text-align: right;
         margin-left: auto;
+        @include mq(sm) {
+          text-align: left;
+        }
       }
     }
   }
   &__slider {
     position: relative;
+    @include mq(sm) {
+      margin-top: 312px;
+    }
   }
 }
