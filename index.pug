@@ -1,6 +1,30 @@
 extends layout 
 
 block content
+  .container
+    .header__slider
+      .slider.js-slider-1
+        each val in [1,2]
+          .slider__item
+            .slider__inner.row
+              .slider__pic.col
+                svg(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="650" height="530").slider-svg-mask
+                  defs
+                    filter#filter
+                      feGaussianBlur(stdDeviation="22")
+                    mask#mask
+                      ellipse(cx="50%" cy="50%" rx="37%" ry="37%" fill="white" filter="url(#filter)")
+                  image(xlink:href="./images/slider"+val+".jpg" mask="url(#mask)" width="650" height="530").sliderImage
+              .slider__info.col
+                .title Семейные <br /> споры
+                p.
+                  Мы всегда относимся с пониманием к эмоциональным переживаниям, обусловливающим всякого рода семейные прения, и в полной мере осознаем необходимость поиска деликатных и, в конечном счете, оптимальных решений. 
+                a(href="/moreinfo", title="подробнее").btn подробнее
+      button.slider-arrow.js-slider-1-left previos
+      button.slider-arrow.js-slider-1-right next
+      .slider-dots.js-slider-1-dots
+  </header>
+  <main>
   // Header end here
   .container
     .services.block
