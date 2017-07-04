@@ -3,8 +3,20 @@
 	position: relative;
 	height: 100%;
 	padding: 90px 80px;
+	@include mq(lg){
+		padding: 55px;
+	}
+	@include mq(md){
+		padding: 15px 33px;
+	}
 	&_feedback {
 		padding: 35px 83px;
+		@include mq(lg) {
+			padding: 33px;
+		}
+		@include mq(xs) {
+			padding: 18px;
+		}
 	}
 }
 /**** SLIDER ****/
@@ -56,7 +68,6 @@
 				padding-right: 0;
 				@include font(13,20);
 			}
-			
 		}
 		.btn {
 			margin: 18px 0 28px;
@@ -80,6 +91,9 @@
 		position: relative;
 		padding-bottom: 100%;
 		overflow: hidden;
+		@include mq(xs){
+			padding-bottom: 45%;
+		}
 		img {
 			position: absolute;
 			top: 50%;
@@ -93,6 +107,12 @@
 	&__item {
 		padding-left: $gutter;
 		padding-right: $gutter;
+		@include mq(sm) {
+			font-size: 0.9em;
+		}
+		@include mq(xs) {
+			font-size: 0.8em;
+		}
 	}
 	.feedback {
 		border: 1px solid #e5e7e9;
@@ -169,20 +189,27 @@
 		background: #f2f3f8;
 	}
 	&:first-of-type {
+		left: 30px;
+		@include mq(lg){
+			left: 0;
+		}
 		&::before{
 			content: " ";
 			display: block;
 			@include sprite($arrow-small_left);
 		}
-		left: 30px;
+		
 	}
 	&:last-of-type {
+		right: 30px;
+		@include mq(lg){
+			right: 0;
+		}
 		&::before {
 			content: " ";
 			display: block;
 			@include sprite($arrow-small_right);
 		}
-		right: 30px;
 	}
 	&:hover {
 		border: 1px solid $orange;

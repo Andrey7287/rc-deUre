@@ -1,7 +1,38 @@
 .team {
+  .col {
+    @include mq(lg){
+      flex-basis: 33.33333%;
+      order: 2
+    }
+    @include mq(sm){
+      flex-basis: 50%;
+      margin-bottom: 15px;
+    }
+    @include mq(xs){
+      flex-basis: 100%;
+      margin-bottom: 15px;
+    }
+    &:last-child {
+      @include mq(lg){
+        order: 1;
+        flex-basis: 100%;
+      }
+      @include mq(sm){
+        flex-basis: 50%;
+        order: 3;
+      }
+      @include mq(xs) {
+        order: 1;
+      }
+    }
+  }
   &__item {
     height: 100%;
     overflow: hidden;
+    @include mq(xs) {
+      width: 263px;
+      margin: auto;
+    }
     .all {
       height: 100%;
       display: flex;
@@ -19,6 +50,20 @@
       .h1 {
         color: #555;
       }
+      @include mq(lg) {
+        display: block;
+        background-image: none;
+        margin-bottom: 30px;
+      }
+      @include mq(sm) {
+        display: flex;
+        background-image: url(../images/team4.jpg);
+        margin-bottom: 0;
+      }
+      .btn {
+        padding: 5px;
+        font-size: 1.1em;
+      }
     }
   }
 }
@@ -26,6 +71,15 @@
   position: relative;
   overflow: hidden;
   padding: 288px 14px 18px;
+  @include mq(md){
+    padding: 230px 14px 18px;
+  }
+  @include mq(sm){
+    padding: 277px 14px 18px;
+  }
+  @include mq(xs){
+    padding: 288px 14px 18px;
+  }
   &__img {
     position: absolute;
     top: 50%;
@@ -33,6 +87,12 @@
     transform: translate(-50%, -50%);
     max-width: none;
     z-index: 2;
+    @include mq(md) {
+      width: 101%;
+    }
+    @include mq(xs) {
+      width: auto;
+    }
   }
   figcaption a{
     display: flex;
@@ -55,6 +115,9 @@
       color: #fff!important;
       &::after {
         background: #7da4ac;
+      }
+      @include mq(md){
+        font-size: 1.25em;
       }
     }
     span {

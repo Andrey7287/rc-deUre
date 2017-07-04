@@ -2,9 +2,49 @@
   &__toggle {
     @include font(32,36,300,$open);
     margin: 5px 0 15px;
+    @include mq(md){
+       @include font(28,32,400,$open);
+    }
+    @include mq(sm){
+       @include font(20,20,400,$open);
+    }
+    .row {
+      flex-wrap: nowrap;
+    }
     .col{
+      display: inline-flex;
+      a {
+        @include mq(sm){
+          border: 1px dashed transparent;
+          text-decoration: underline;
+          text-decoration-style: dotted;
+          &:hover,
+          &.act  {
+            text-decoration: none;
+          }
+        }
+      }
       &:first-child{
-        text-align: right;
+        a {
+          margin-left: auto;
+          @include mq(sm) {
+            text-align: center;
+            margin-left: 0;
+            margin-right: auto;
+            width: 120px;
+          }
+        }
+      }
+      &:last-child {
+        a {
+          margin-right: auto;
+          @include mq(sm) {
+            text-align: center;
+            margin-right: 0;
+            margin-left: auto;
+            width: 140px;
+          }
+        }
       }
     }
   }
@@ -19,6 +59,21 @@
     .col {
       flex-basis: 25%;
       flex-grow: 0;
+      @include mq(lg){
+        flex-basis:  33.333333%;
+      }
+      @include mq(md){
+        flex-basis: 50%;
+      }
+      @include mq(sm){
+        font-size: 0.9em;
+      }
+      @include mq(xs){
+        flex-basis: 100%;
+        .m-title {
+          br { display: none }
+        }
+      }
     }
   }
   .srv {
@@ -32,6 +87,9 @@
     color: $default-color;
     text-decoration: none;
     position: relative;
+    @include mq(xs){
+      margin: 18px 12px;
+    }
     &::before,
     &::after {
       content: ' ';

@@ -18,7 +18,7 @@ import './modules/ravno';
 var	largeScreen = window.matchMedia("(min-width: 1201px)").matches,
 		mediumScreen = window.matchMedia("(min-width: 993px) and (max-width: 1200px)").matches,
 		smallScreen = window.matchMedia("(max-width: 768px)").matches,
-		resizeAlign = new OnResize,
+		resizeAlign = new OnResize(),
 		scrollTiming = 0;
 
 /****************************
@@ -128,9 +128,19 @@ $('.js-slider-2').slick({
 	infinite: true,
 	responsive: [
     {
-      breakpoint: 333,
+      breakpoint: 993,
       settings: {
         slidesToShow: 3
+      }
+		}, {
+			breakpoint: 769,
+      settings: {
+        slidesToShow: 2
+      }
+		}, {
+			breakpoint: 577,
+      settings: {
+        slidesToShow: 1
       }
 		}
 	]
@@ -148,7 +158,7 @@ $('.js-slider-3').slick({
 	infinite: true,
 	responsive: [
     {
-      breakpoint: 333,
+      breakpoint: 993,
       settings: {
         slidesToShow: 1
       }

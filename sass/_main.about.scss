@@ -2,6 +2,9 @@
   background-image: url(../images/about-bkg.jpg);
   background-repeat: no-repeat;
   background-position: center center;
+  @include mq(sm){
+    background-image: none;
+  }
   &__inner {
     margin: 0 auto;
     width: 945px;
@@ -9,6 +12,22 @@
     background: linear-gradient(to bottom, #adb6bb 0%, #304351 100%);
     padding: 50px 130px;
     position: relative;
+    @include mq(lg){
+      width: auto;
+      padding: 50px 130px;
+    }
+    @include mq(md){
+      padding: 20px 80px;
+      font-size: 0.95em;
+    }
+    @include mq(sm){
+      padding: 15px 50px;
+      font-size: 0.9em;
+    }
+    @include mq(xs){
+      padding: 12px 20px;
+      font-size: 0.85em;
+    }
     &:before,
     &:after {
       content: " ";
@@ -17,6 +36,9 @@
       width: 70px;
       height: 70px;
       border: 1px solid #cfd9de;
+      @include mq(md){
+        display: none;
+      }
     }
     &:before {
       top: 75px;
@@ -24,7 +46,7 @@
       border-width: 1px 0 0 1px;
     }
     &:after {
-      bottom: 75px;
+      bottom: 65px;
       right: 97px;
       border-width: 0 1px 1px 0;
     }
@@ -35,6 +57,15 @@
       display: block;
       width: 360px;
       margin: 15px auto;
+      @include mq(sm) {
+        width: 320px;
+        margin: 15px auto;
+        padding: 6px 15px;
+        font-size: 1.1em;
+      }
+      @include mq(xs) {
+        width: 100%;
+      }
     }
   }
 }

@@ -1,6 +1,9 @@
 .custom {
   &__inner {
     background: linear-gradient(to bottom, #cbdce8 0%, #f6f2ee 100%);
+    @include mq(lg){
+      padding-top: 20px;
+    }
   }
   .col {
     &:first-child {
@@ -13,6 +16,15 @@
     &:last-child {
       flex-basis: 75%;
       width: 75%;
+    }
+  }
+  p {
+    @include mq(sm){
+      font-size: 0.95em;
+    }
+    @include mq(xs){
+      font-size: 0.9em;
+      line-height: 1.4em;
     }
   }
 }

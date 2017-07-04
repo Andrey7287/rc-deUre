@@ -104,6 +104,22 @@ fieldset {
 .main-form {
 	background: linear-gradient(#cbdce8 0%, #f6f2ee 100%);
 	padding: 50px 0;
+	form{
+		@include mq(lg){			
+			font-size: 0.95em;
+		}
+		@include mq(sm){			
+			font-size: 0.9em;
+		}
+		@include mq(xs){			
+			font-size: 0.85em;
+		}
+	}
+	.col {
+		@include mq(md){			
+			flex-basis: 100%;
+		}
+	}
 	input:not(.btn),
 	textarea {
 		width: 100%;
@@ -119,6 +135,15 @@ fieldset {
 		margin: 20px auto;
 		width: 360px;
 		display: block;
+		@include mq(sm) {
+			width: 320px;
+			margin: 15px auto;
+    	padding: 6px 15px;
+			font-size: 1.1em;
+		}
+		@include mq(xs) {
+			width: 100%;
+		}
 	}
 	a {
 		line-height: 1.375em;
@@ -129,9 +154,20 @@ fieldset {
 	&__item {
 		&:first-child {
 			flex-basis: 60%;
+			@include mq(lg){
+				flex-basis: 100%;
+			}
 		}
 		&:last-child {
 			flex-basis: 40%;
+			@include mq(lg){
+				flex-basis: 100%;
+			}
+		}
+	}
+	a {
+		@include mq(xs){
+			border-bottom: 1px dashed transparent!important;
 		}
 	}
 }

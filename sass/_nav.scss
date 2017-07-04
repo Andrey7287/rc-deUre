@@ -122,7 +122,7 @@
 			width: 195px;
 		}
 		@include mq(sm){
-			width: calc(50% + #{$gutter});
+			width: calc(50% - 5px);
 			top: 172px;
 		}
 		.slim & {
@@ -134,7 +134,9 @@
 				right: 50%;
 			}
 			@include mq(sm) {
-				padding-right: 5px;
+				padding: 0;
+				right: inherit;
+				left: 0;
 			}
 			.slim & {
 				right: -17px;
@@ -146,7 +148,9 @@
 				left: 50%;
 			}
 			@include mq(sm) {
-				padding-left: 5px;
+				padding: 0;
+				left: inherit;
+				right: 0;
 			}
 			.slim & {
 				left: 0;
@@ -173,6 +177,9 @@
 	padding: 20px;
 	display: none;
 	transition: top .3s ease-in;
+	@include mq(sm) {
+		width: auto;
+	}
 	&.forLightBox {
 		position: static;
 		display: block;
@@ -185,6 +192,13 @@
 		display: block;
 		width: 360px;
 		text-align: center;
+		@include mq(sm){
+			width: auto;
+			display: inline-block;
+			margin: 15px 0;
+			padding: 5px 7px;
+			font-size: 1.1em;
+		}
 	}
 	&_act {
 		top: 148px;

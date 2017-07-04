@@ -1,0 +1,14 @@
+.section {
+  flex-basis: 75%;
+}
+.lowers-list {
+  &__item {
+    
+  }
+  &__pic {
+    flex-basis: 33.3333%;
+  }
+  &__info {
+    flex-basis: 66.666666%;
+  }
+}
