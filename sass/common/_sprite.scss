@@ -196,6 +196,17 @@ $ico-in-total-width: 213px;
 $ico-in-total-height: 144px;
 $ico-in-image: '../images/sprite.png';
 $ico-in: (165px, 67px, -165px, -67px, 30px, 30px, 213px, 144px, '../images/sprite.png', 'ico-in', );
+$link-corn-name: 'link-corn';
+$link-corn-x: 195px;
+$link-corn-y: 57px;
+$link-corn-offset-x: -195px;
+$link-corn-offset-y: -57px;
+$link-corn-width: 14px;
+$link-corn-height: 7px;
+$link-corn-total-width: 213px;
+$link-corn-total-height: 144px;
+$link-corn-image: '../images/sprite.png';
+$link-corn: (195px, 57px, -195px, -57px, 14px, 7px, 213px, 144px, '../images/sprite.png', 'link-corn', );
 $mobile-menu-ico-name: 'mobile-menu-ico';
 $mobile-menu-ico-x: 165px;
 $mobile-menu-ico-y: 131px;
@@ -210,7 +221,7 @@ $mobile-menu-ico: (165px, 131px, -165px, -131px, 15px, 13px, 213px, 144px, '../i
 $spritesheet-width: 213px;
 $spritesheet-height: 144px;
 $spritesheet-image: '../images/sprite.png';
-$spritesheet-sprites: ($arrow-left, $arrow-right, $arrow-hov-left, $arrow-hov-right, $arrow-small-left, $arrow-small-right, $dot-act, $dot, $drop-border-act, $drop-border, $feedback-corn-act, $feedback-corn, $ico-checkbox-off, $ico-checkbox-on, $ico-fb, $ico-feedback, $ico-in, $mobile-menu-ico, );
+$spritesheet-sprites: ($arrow-left, $arrow-right, $arrow-hov-left, $arrow-hov-right, $arrow-small-left, $arrow-small-right, $dot-act, $dot, $drop-border-act, $drop-border, $feedback-corn-act, $feedback-corn, $ico-checkbox-off, $ico-checkbox-on, $ico-fb, $ico-feedback, $ico-in, $link-corn, $mobile-menu-ico, );
 $spritesheet: (213px, 144px, '../images/sprite.png', $spritesheet-sprites, );
 
 // The provided mixins are intended to be used with the array-like variables

@@ -66,6 +66,28 @@
       }
     }
   }
+  &_inner {
+    position: relative;
+    .row {
+      align-content: center;
+      justify-content: center;
+    }
+    .col {
+      flex-basis: 33.33333%;
+      flex-grow: 0;
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+    h2, .h2 {
+      position: absolute;
+      display: block;
+      width: 265px;
+      left: -295px;
+      text-transform: uppercase;
+      top: 0;
+      @include font(36,44,400,$serif);
+    }
+  }
 }
 .lawyer {
   position: relative;

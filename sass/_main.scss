@@ -9,24 +9,12 @@
 
 .drop ul,
 .footer-menu {
-	margin: 7px 0 15px;
-	padding: 0;
-	list-style: none;
-	li {
-		@include font(18,20);
-		padding: 5px 0 5px 28px;
-		position: relative;
-		line-height: 1.25em;
-		&::before{
-			content: " ";
-			display: block;
-			width: 22px;
-			height: 1px;
-			background-color: #7e888d;
-			position: absolute;
-			left: 0;
-			top: 0.9em;
-		}
+	@include list(18,20,#7e888d);
+}
+.content {
+	overflow: hidden;
+	ul {
+		@include list();
 	}
 }
 //Tables

@@ -1,3 +1,51 @@
 .aside {
   flex-basis: 25%;
+  .h4, h4, .h3, h3 {
+    &:first-child {
+      margin-top: 0;
+    }
+  } 
+}
+.leftmenu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  &__item {
+    border-bottom: 1px solid #e5e7e9;
+    &:first-child {
+      border-top: 1px solid #e5e7e9;
+    }
+  }
+  &__spec {
+    @include font(20,25,700,$serif);
+    padding: 18px 0;
+    text-decoration: none;
+    color: $default-color;
+    width: 100%;
+    &:hover {
+      color: $orange;
+    }
+  }
+  &__srv {
+    display: flex;
+    text-decoration: none;
+    padding: 18px 0;
+  }
+  &__img {
+    display: inline-flex;
+    align-items: center;
+  }
+  &__srv-link {
+    @include font(20,24,700,$serif);  
+    color: $default-color;
+    transition: color .2s ease-in;
+    padding-left: 30px;
+    flex: 0;
+    flex-basis: 195px;
+    &:hover {
+      color: $orange;
+    }
+  }
 }

@@ -104,6 +104,16 @@ fieldset {
 .main-form {
 	background: linear-gradient(#cbdce8 0%, #f6f2ee 100%);
 	padding: 50px 0;
+	margin-top: 55px;
+	@include mq(md) {
+		margin-top: 35px;
+	}
+	@include mq(sm) {
+		margin-top: 20px;
+	}
+	@include mq(xs) {
+		margin-top: 15px;
+	}
 	form{
 		@include mq(lg){			
 			font-size: 0.95em;

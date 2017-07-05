@@ -224,3 +224,80 @@ if ( $services.length ) {
 		$services.find('.m-title').ravno();
 	});
 }
+
+/*****************************
+***** lawyer-card Slide  *****
+******************************/
+
+var $lawyerCard = $('.lawyer-card');
+
+if ( $lawyerCard.length ) {
+
+	$(document).ready(function(){
+
+		var cardHeight = $('.lawyers-list__pic').outerHeight(true),
+				calcOccupiedHeight =  function(el){
+					return el.find('.lawyer-card__name').outerHeight(true) + el.find('.lawyer-card__spec').outerHeight(true) + el.find('.expand-link').outerHeight(true);
+				},
+				calcTxtHeight =  function(el){
+					return el.find('.lawyer-card__txt').outerHeight(true);
+				},
+				hideOverflowTxt = function(that){
+
+					var txtHeight = calcTxtHeight(that),
+							occupiedHeight = calcOccupiedHeight(that),
+							emptySpace = cardHeight - occupiedHeight,
+							$link = that.find('.expand-link'),
+							$txt =  that.find('.lawyer-card__txt');
+							
+
+					if ( txtHeight > emptySpace ) {
+						
+						that.addClass('collapsed');
+						$txt.height(emptySpace);
+					} 
+				}
+
+
+		$lawyerCard.each(function(){
+
+			hideOverflowTxt($(this));
+
+		});
+
+		$('.expand-link').click(function(e){
+			
+			e.preventDefault();
+
+			var $targetTxt = $(this).parent().find('.lawyer-card__txt');
+
+			$targetTxt.toggleClass('expand');
+
+			$targetTxt.is('.expand') ? $(this).html('свернуть').addClass('expand') : $(this).html('Читать полностью').removeClass('expand');
+		});
+
+	});
+}
+
+var isServiceMenu = $('.leftmenu__srv').length;
+
+if ( isServiceMenu ) {
+
+	$(document).ready(function(){
+
+		//align by aside height
+		//console.log('!');
+
+		var $content = $('.content'),
+				menuHeight = $('.aside .leftmenu').outerHeight(true);
+		$content.height(menuHeight - 25);
+
+		if ( $content[0].scrollHeight > $content.outerHeight(true) ) {
+
+			$content.parent().addClass('collapsed');
+
+		}
+
+	});
+	
+}
