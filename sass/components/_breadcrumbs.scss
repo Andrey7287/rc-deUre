@@ -1,8 +1,15 @@
 .breadcrumbs {
-	margin: 5px 0 45px;
+	margin: 6px 0 46px;
+	@include font(12, 18);
+	@include mq(sm) {
+		margin: 7px 0 30px;
+	}
+	@include mq(sm) {
+		margin: 7px 0 25px;
+	}
 	&__item {
 		color: #acb6bb;
-		@include font(12, 29);
+		
 		margin-right: 4px;
 		&::after{
 			content: "";

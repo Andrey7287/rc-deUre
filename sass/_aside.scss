@@ -4,6 +4,11 @@
     &:first-child {
       margin-top: 0;
     }
+  }
+  @include mq(lg){
+    flex-basis: 100%;
+    order: 2;
+    margin-top: 35px;
   } 
 }
 .leftmenu {
@@ -12,10 +17,31 @@
   list-style: none;
   display: flex;
   flex-direction: column;
+  @include mq(lg) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: -#{$gutter};
+    margin-right: -#{$gutter};
+  }
   &__item {
     border-bottom: 1px solid #e5e7e9;
     &:first-child {
       border-top: 1px solid #e5e7e9;
+    }
+    @include mq(lg) {
+      border: 1px solid #e5e7e9;
+      flex: 0;
+      flex-basis: calc(33.3333% -  #{$gutter}*2);
+      margin: $gutter;
+      padding: 10px;
+      display: inline-flex;
+    }
+    @include mq(sm){
+      flex-basis: calc(50% -  #{$gutter}*2);
+    }
+    @include mq(xs){
+      flex-basis: 100%;
     }
   }
   &__spec {
@@ -24,6 +50,15 @@
     text-decoration: none;
     color: $default-color;
     width: 100%;
+    @include mq(md) {
+      @include font(20,24,400,$serif);
+    }
+    @include mq(sm) {
+      @include font(17,22,400,$serif);
+    }
+    @include mq(xs) {
+      @include font(16,20,400,$serif);
+    }
     &:hover {
       color: $orange;
     }
@@ -41,9 +76,16 @@
     @include font(20,24,700,$serif);  
     color: $default-color;
     transition: color .2s ease-in;
-    padding-left: 30px;
+    padding-left: 10px;
     flex: 0;
     flex-basis: 195px;
+    @include mq(lg) {
+      display: inline-flex;
+      align-items: center;
+    }
+    @include mq(md){
+      @include font(17,22,400,$serif);  
+    }
     &:hover {
       color: $orange;
     }

@@ -3,6 +3,12 @@
   background: linear-gradient(to bottom, #304351 0%, #57646e 202px, #667179 248px, #d7d2cc 100%);
   color: #fff;
   min-height: 248px;
+  @include mq(lg) {
+    min-height: 220px;
+  }
+  @include mq(sm){
+    min-height: 350px;
+  }
   &__menu {
     position: fixed;
     width: 100%;

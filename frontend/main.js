@@ -229,6 +229,11 @@ if ( $services.length ) {
 ***** lawyer-card Slide  *****
 ******************************/
 
+function expanLinkHandler($eventTarget, $targetBlock){			
+	$targetBlock.toggleClass('expand');
+	$targetBlock.is('.expand') ? $eventTarget.html( $eventTarget.attr('data-open') ).addClass('expand') : $eventTarget.html( $eventTarget.attr('data-closed') ).removeClass('expand');
+}
+
 var $lawyerCard = $('.lawyer-card');
 
 if ( $lawyerCard.length ) {
@@ -268,36 +273,39 @@ if ( $lawyerCard.length ) {
 		$('.expand-link').click(function(e){
 			
 			e.preventDefault();
-
 			var $targetTxt = $(this).parent().find('.lawyer-card__txt');
+			expanLinkHandler($(this), $targetTxt); //decl at string 232
 
-			$targetTxt.toggleClass('expand');
-
-			$targetTxt.is('.expand') ? $(this).html('свернуть').addClass('expand') : $(this).html('Читать полностью').removeClass('expand');
 		});
 
 	});
 }
 
+/**************************
+***** Services Slide  *****
+***************************/
+
 var isServiceMenu = $('.leftmenu__srv').length;
 
 if ( isServiceMenu ) {
 
-	$(document).ready(function(){
+	$(window).on('load', function(){
 
-		//align by aside height
-		//console.log('!');
 
 		var $content = $('.content'),
 				menuHeight = $('.aside .leftmenu').outerHeight(true);
-		$content.height(menuHeight - 25);
 
-		if ( $content[0].scrollHeight > $content.outerHeight(true) ) {
+		$content.height(menuHeight - 23); 
 
-			$content.parent().addClass('collapsed');
+		if ( $content[0].scrollHeight - 3 > $content.outerHeight(true) ) {
+
+			$content.parent().parent().addClass('collapsed');
+		  $('[data-target="Content text"]').click(function(e){
+				e.preventDefault();
+				expanLinkHandler($(this), $content);
+			});
 
 		}
-
 	});
 	
 }

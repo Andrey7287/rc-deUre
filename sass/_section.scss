@@ -1,0 +1,12 @@
+.section {
+  flex-basis: 75%;
+  @include mq(lg){
+    flex-basis: 100%;
+    order: 1;
+  } 
+  .h1, h1, .h2, h2, .h3, h3 {
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}

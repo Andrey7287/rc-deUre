@@ -212,11 +212,10 @@ h2, .h2 {
 		margin: 18px 0;
 	}
 	@include mq(sm){
-		@include font(32,34,400,$serif);
-		margin: 10px 0;
+		@include font(30,32,400,$serif);
 	}
 	@include mq(xs){
-		@include font(28,30,400,$serif);
+		@include font(26,28,400,$serif);
 	}
 }
 h3, .h3 {

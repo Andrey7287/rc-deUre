@@ -156,7 +156,7 @@ module.exports = {
 					{
 						loader: 'file-loader',
 						query: {
-							name: './images/[name].[ext]'
+							name: isProd ? '../images/[name].[ext]' : './images/[name].[ext]'
 						}
 					}
 				]
