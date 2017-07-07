@@ -8,3 +8,5 @@ __nogit
 .idea
 js
 *.html*
+*.css*
+*.css.map*
