@@ -1,0 +1,36 @@
+extends layout 
+
+block content
+  </header>
+  <main>
+  // Header end here
+  .inner
+    script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCy5FZKzqLQwgdAttjlNu4ZzSewPhKxpno") 
+    .container
+      .breadcrumbs
+        a(href="/" title="Главная").breadcrumbs__item Коллегия адвокатов «Де-Юре»
+        span.breadcrumbs__item Контакты
+      h2  Контакты
+      .row.site-contacts
+        .col.site-contacts__item
+          .contacts.js-contacts
+            h3 
+              b Сетунь
+            .sub-title (Центральный офис) 
+            p г.Москва, ул. Горбунова, д. 2 , стр. 3, офис В613, БЦ «Гранд Сетунь Плаза»
+            .phone +7 495 980 60 91
+          .map#map
+        .col.site-contacts__item
+          .contacts_small.js-contacts
+            h4 Лапино 
+            .sub-title (Адвокатская группа М.Коробицына)
+            p Московская область, Одинцовский район, дер.Лапино, мкр-н «Радуга», д. 54, стр. 5
+            .phone +7 495 980 60 91
+          .map_small#map2
+          .contacts_small.js-contacts
+            h4 Екатеринбург 
+            .sub-title (Адвокатская группа С.Акименко)
+            p г.Екатеринбург, ул. Розы Люксембург, д. 19
+            .phone +7 951 230 23 65
+          .map_small#map3
+  // Footer start here

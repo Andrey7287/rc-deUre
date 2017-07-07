@@ -1,0 +1,42 @@
+.map{
+  height: 680px;
+  &_small {
+    height: 240px;
+  }
+}
+
+.contacts {
+  h3 {
+    margin-bottom: 0;
+  }
+  .phone {
+    @include font (24,26);
+    margin: 10px 0 15px;
+  }
+  &_small {
+    h4 {
+      color: $default-color;
+      margin-bottom: 0;
+    }
+    .sub-title {
+      @include font(18,26,400,$serif);
+      color: $default-color;
+    }
+    .phone {
+      @include font (20,26);
+    }
+    p {
+      margin: 10px 0;
+    }
+  }
+}
+
+.site-contacts {
+  &__item {
+    &:last-child {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+}

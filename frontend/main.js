@@ -8,7 +8,8 @@ window.jQuery = $;
 /* Import project styles and components */
 require('script-loader!slick-carousel');
 require('jquery-colorbox');
-require('./modules/ymap');
+require('./modules/gmap');
+import 'es6-promise/auto';
 import '../sass/css.scss';
 import OnResize from './modules/resize';
 import scrollup from './modules/scrollup';
@@ -224,6 +225,14 @@ if ( $services.length ) {
 		$services.find('.m-title').ravno();
 	});
 }
+// var $contacts = $('.js-contacts');
+// if ( $contacts.length ) {
+// 	$(document).ready(function(){
+// 		$contacts.ravno();
+// 	});
+// }
+
+
 
 /*****************************
 ***** lawyer-card Slide  *****

@@ -15,7 +15,6 @@
       display: inline-flex;
       a {
         @include mq(sm){
-          border: 1px dashed transparent;
           text-decoration: underline;
           text-decoration-style: dotted;
           &:hover,
@@ -59,6 +58,7 @@
     .col {
       flex-basis: 25%;
       flex-grow: 0;
+      -ms-flex-preferred-size: calc(25% - #{$gutter}*2);
       @include mq(lg){
         flex-basis:  33.333333%;
       }
@@ -77,18 +77,18 @@
     }
   }
   .srv {
-    margin: 18px auto;
+    margin: 18px 0;
     padding: 32px 17px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: block;
     text-align: center;
     color: $default-color;
     text-decoration: none;
     position: relative;
     @include mq(xs){
       margin: 18px 12px;
+    }
+    &__img {
+      display: inline-block;
     }
     &::before,
     &::after {

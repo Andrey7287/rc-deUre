@@ -27,7 +27,7 @@
 	&__inner {
 		flex-wrap: nowrap;
 		@include mq(md){
-			flex-wrap: wrap;
+			display: block;
 		}
 	}
 	&__pic {

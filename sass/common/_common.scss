@@ -113,7 +113,7 @@ a {
 	&[href^='mailto'] {
 		text-decoration: none;
 	}
-	&[href^='#']:not(.btn):not(.expand-link) {
+	&[href^='#']:not(.btn):not(.expand-link):not(a[data-toggle]) {
 		border-bottom: 1px dashed $link;
 		&:hover,
 		&.act,
@@ -243,5 +243,15 @@ h4, .h4 {
 	@include mq(sm){
 		@include font(18,22,400,$serif);
 		margin: 6px 0;
+	}
+}
+.sub-title {
+	@include font(24,26,400,$serif);
+	color: $header;
+	@include mq(md) {
+		@include font(22,24,400,$serif);
+	}
+	@include mq(sm){
+		@include font(20,22,400,$serif);
 	}
 }
