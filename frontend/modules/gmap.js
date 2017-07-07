@@ -69,4 +69,4 @@ function initMap() {
 
 //export default initMap;
 
-google.maps.event.addDomListener(window, 'load', initMap);
+document.getElementById('map') ? google.maps.event.addDomListener(window, 'load', initMap) : console.log('Map undefined');
