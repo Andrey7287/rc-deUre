@@ -59,7 +59,8 @@
     @include mq(xs) {
       @include font(16,20,400,$serif);
     }
-    &:hover {
+    &:hover,
+    .act & {
       color: $orange;
     }
   }

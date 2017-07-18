@@ -113,7 +113,7 @@ a {
 	&[href^='mailto'] {
 		text-decoration: none;
 	}
-	&[href^='#']:not(.btn):not(.expand-link):not(a[data-toggle]) {
+	&[href^='#']:not(.btn):not(.expand-link):not(.drop-menu__link) {
 		border-bottom: 1px dashed $link;
 		&:hover,
 		&.act,

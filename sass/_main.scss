@@ -1,8 +1,9 @@
 //logo as bkg
 .site-logo {
 	position: absolute;
-	top: 34px;
-	right: calc(50% - 85px);
+	top: 71px;
+	right: 50%;
+	transform: translateX(50%);
 }
 
 //Lists
@@ -97,7 +98,7 @@
 	text-decoration: none;
 	text-transform: uppercase;
 	background-image: linear-gradient(to bottom, #f26c4b 0%, #eda652 51%, #f26c4b 100%);
-	background-size: 200%;
+	background-size: 200% 200%;
 	transition: background-position .2s ease-in-out;
 	text-align: center;
 	&:hover,

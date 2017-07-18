@@ -1,4 +1,8 @@
 .custom {
+  *{
+    min-height: 0;
+    min-width: 0;
+  }
   &__inner {
     background: linear-gradient(to bottom, #cbdce8 0%, #f6f2ee 100%);
     @include mq(lg){
@@ -12,10 +16,17 @@
       flex-direction: column;
       justify-content: center;
       text-align: center;
+      @include mq(lg) {
+        flex-basis: 100%;
+      }
     }
     &:last-child {
       flex-basis: 75%;
       width: 75%;
+      @include mq(lg) {
+        flex-basis: 100%;
+        width: 100%;
+      }
     }
   }
   p {

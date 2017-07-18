@@ -221,7 +221,7 @@ $('.services__toggle').on('click', '[data-toggle]', function(e){
 
 var $services = $('.services');
 if ( $services.length ) {
-	$(document).ready(function(){
+	$(window).on('load', function(){
 		$services.find('.m-title').ravno();
 	});
 }
@@ -249,7 +249,7 @@ if ( $lawyerCard.length ) {
 
 	$(document).ready(function(){
 
-		var cardHeight = $('.lawyers-list__pic').outerHeight(true),
+		var cardHeight = $('.lawyer').outerHeight(true),
 				calcOccupiedHeight =  function(el){
 					return el.find('.lawyer-card__name').outerHeight(true) + el.find('.lawyer-card__spec').outerHeight(true) + el.find('.expand-link').outerHeight(true);
 				},

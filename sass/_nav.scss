@@ -1,5 +1,5 @@
 .site-nav-outer {
-	padding: 148px 0 17px;
+	padding: 129px 0 17px;
 	transition: padding .1s ease-in-out;
 	@include mq(sm) {
 		padding: 267px 0 17px;
@@ -49,7 +49,7 @@
 			display: inline-block;
 			width: 100%;
 			@include font(20,30,700,$serif);
-			padding: 10px 0;
+			padding: 11px 0;
 			color: #fff;
 			text-align: center;
 			text-transform: uppercase;
@@ -66,7 +66,8 @@
 			@include mq(sm) {
 				background: #76828c;
 			}
-			&:hover {
+			&:hover,
+			&:focus {
 				background: #76828c;
 			}
 		}
@@ -112,13 +113,18 @@
 		}
 	}
 	&__link {
+		&.act {
+			a {
+				background: #76828c;
+			}
+		}
 		@include mq(sm) {
 			display: none;
 		}
 	}
 	&__drop {
 		position: relative;
-		top: -148px;
+		top: -129px;
 		transition: all .1s ease-in-out;
 		@include mq(lg){
 			position: absolute;
@@ -188,6 +194,9 @@
 	&.forLightBox {
 		position: static;
 		display: block;
+		@include mq(xs){
+			padding: 10px;
+		}
 	}
 	.slim & {
 		top: 82px;
@@ -215,18 +224,21 @@
 		column-count: 2;
 		@include mq(sm){
 			column-count: inherit;
+			font-size: 0.95em;
 		}
-		li {
-			a {
-				color: #3d4e5b;
-				border: 0;
-				&:hover {
-					color: #e84a23;
-					border: 0;
-				}
-			}
+		@include mq(sm){
+			font-size: 0.85em;
+		}
+		&__item {
 			&:before {
 				background-color: #88a0b5;
+			}
+		}
+		&__link {
+			color: #3d4e5b;
+			text-decoration: none;
+			&:hover {
+				color: #e84a23;
 			}
 		}
 	}

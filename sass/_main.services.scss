@@ -15,12 +15,7 @@
       display: inline-flex;
       a {
         @include mq(sm){
-          text-decoration: underline;
-          text-decoration-style: dotted;
-          &:hover,
-          &.act  {
-            text-decoration: none;
-          }
+          border-bottom: 0!important;
         }
       }
       &:first-child{

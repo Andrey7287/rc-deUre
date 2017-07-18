@@ -28,26 +28,33 @@
       margin-bottom: 20px
     }
     .site-logo {
-      top: 34px;
+      z-index: 11;
       @include mq(lg){
         position: static;
-        width: 115px;
-        height: 124px;
-        margin-top: 10px;
-        margin-left: 40px;
+        margin-right: auto;
+        transform: translateX(#{$gutter});
+        height: 108px;
+        margin-top: 8px;
+      }
+      @include mq(md) {
+        width: 140px;
+        height: 77px;
+        margin-top: 23px;
+
       }
       @include mq(sm){
         position: absolute;
-        width: 125px;
-        height: 135px;
+        width: auto;
+        height: auto;
         top: 10px;
         margin: 0;
-            right: calc(50% - 62px);
+        transform: translateX(50%);
+        margin-top: 15px;
       }
     }
     .top-contacts {
-      padding-top: 46px;
-      padding-bottom: 60px;
+      padding-top: 27px;
+      padding-bottom: 58px;
       flex-basis: auto;
       flex-grow: 0;
       position: relative;

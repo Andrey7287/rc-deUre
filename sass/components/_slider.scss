@@ -1,8 +1,8 @@
-
 .slider-wrapp {
 	position: relative;
 	height: 100%;
 	padding: 90px 80px;
+
 	@include mq(lg){
 		padding: 55px;
 	}
