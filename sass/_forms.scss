@@ -17,6 +17,10 @@ textarea {
 	font: inherit;
 	padding: 0 10px;
 	border: 1px solid #d1d2d4;
+	&:focus {
+		outline: 2px solid $soft-orange	;
+		outline-offset: -2px;
+	}
 }
 textarea {
 	overflow: auto;
@@ -68,10 +72,8 @@ fieldset {
 				}
 			}
 		}
-		&:focus {
-			& + label {
-				outline: 1px solid $soft-orange;
-			}
+		&:focus + label::before{
+			outline: 2px solid $soft-orange;
 		}
 	}
 /*	&[type=radio] {

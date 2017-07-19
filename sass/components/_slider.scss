@@ -135,6 +135,12 @@
 			left: 45px;
 			@include sprite($feedback-corn);
 		}
+		&:hover {
+			border-color: $link;
+		}
+		&:hover::after {
+			@include sprite($feedback-corn_act);
+		}
 	}
 	.author {
 		@include font(22,26,700,$serif);
